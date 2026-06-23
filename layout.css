@@ -1,0 +1,92 @@
+span {
+    color: rgb(206, 196, 9);
+}
+
+h1,
+h4 {
+    display: inline-block;
+}
+
+.container {
+    height: 400px;
+    width: 700px;
+    display: grid;
+
+    /* Better way */
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+
+    background-color: pink;
+}
+
+/* HEADER */
+.header {
+    grid-column: 1 / 13;
+    border-bottom: 5px solid white;
+}
+
+/* FOOTER */
+.footer {
+    grid-column: 1 / 13;
+    border-top: 5px solid white;
+}
+
+/* SIDEBAR */
+.sidebar {
+    grid-column: 1 / 4;
+    grid-row: 2 / 12;
+    border-right: 5px solid white;
+}
+
+/* ADS */
+.ads {
+    grid-column: 10 / 13;
+    grid-row: 2 / 12;
+    border-left: 5px solid white;
+}
+
+/* NAVIGATION */
+.navigation {
+    grid-column: 4 / 10;
+    grid-row: 2 / 3;
+    border-bottom: 5px solid white;
+}
+
+/* MAIN CONTENT */
+.main {
+    grid-column: 4 / 10;
+    grid-row: 3 / 12;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 429px) {
+
+    .footer {
+        grid-column: 4 / 13;
+    }
+
+    .sidebar {
+        grid-column: 1 / 4;
+        grid-row: 3 / 12;
+    }
+
+    .ads {
+        grid-column: 1 / 4;
+        grid-row: 12 / 13;
+
+        border-top: 5px solid white;
+        border-right: 5px solid white;
+
+        /* remove unnecessary border */
+        border-left: none;
+    }
+
+    .navigation {
+        grid-column: 1 / 13;
+    }
+
+    .main {
+        grid-column: 4 / 10;
+        grid-row: 3 / 12;
+    }
+}
